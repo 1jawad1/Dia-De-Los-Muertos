@@ -45,3 +45,36 @@ nav.addEventListener('mouseout',()=>{
     })  
 
 })
+
+var mesGif = document.querySelectorAll('.animated-deco');
+
+mesGif.forEach(
+    icon=>{
+    
+    icon.addEventListener('mouseover',()=>{
+ 
+        if(!icon.getAttribute('src').includes('.gif')){
+            icon.setAttribute('src', change_path(icon.getAttribute('src')))
+        }
+    });
+
+    icon.addEventListener('mouseout', ()=>{
+        if(icon.getAttribute('src').includes('.gif')){
+            icon.setAttribute('src', change_path(icon.getAttribute('src'), true))
+        }
+    })
+
+})
+
+function change_path(path, reverse=false){
+    path = path.split('/')
+    if(reverse){
+        path = path.slice(0,-2).join('/') +"/png/"+path[path.length-1].replace('.gif','.png')
+    }else{
+        path = path.slice(0,-2).join('/') +"/gif/"+path[path.length-1].replace('.png','.gif')
+    }
+    return path
+
+}
+
+console.log(change_path(mesGif[1].getAttribute('src')))

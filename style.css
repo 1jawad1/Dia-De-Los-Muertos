@@ -13,6 +13,7 @@ body{
 }
 
 ::-webkit-scrollbar-thumb{
+    
     background-color: #575757;
     border-radius: 10px;
     border: 3px solid #131313;
@@ -21,6 +22,7 @@ body{
 
 
 .video_l{
+
     position: absolute;
     filter: grayscale(0.25);
     transition: all 2s;
@@ -29,6 +31,7 @@ body{
 
 
 .navigation_bar{
+
     width: 60px;
     height: 60%;
     position: fixed;
@@ -43,6 +46,7 @@ body{
     box-shadow: -2px 1px 10px 1px rgba(0, 0, 0, 0.727) ;
     margin-top: 7%;
     font-size: small;
+    transform: scale(0.8);
 
 }
 
@@ -52,12 +56,14 @@ body{
 }
 
 .icons_list_items{
-width: 100%;
-height: 100%;
-margin: 2px;
-display: flex;
-justify-content: space-around;
-align-items: center;
+
+    width: 100%;
+    height: 100%;
+    margin: 2px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
 }
 
 .icons_list_items:hover{
@@ -85,10 +91,13 @@ align-items: center;
     /* background: repeating-linear-gradient(45deg, #141414, black 16px); */
     background-color: #1b1b1b;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
 }
+
+
 
 .content{
     width: 80%;
@@ -109,6 +118,7 @@ align-items: center;
     color: white;
     box-shadow: 0px -5px 20px 5px rgba(0, 0, 0, 0.816);
     font-family: Jacques Francois Shadow;
+    font-size: 12px;
 }
 
 .info{
@@ -124,6 +134,11 @@ align-items: center;
 .head{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .lecteur{
@@ -135,21 +150,24 @@ align-items: center;
 
 
 .pre_show{
-width: 100%;
-height: 100%;
-padding-bottom: 10px;
-position: relative;
-z-index: 2;
-opacity: 1;
-background-color: #131313;
-display: flex;
-justify-content: center;
-box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.816);
+
+    width: 100%;
+    height: 100%;   
+    padding-bottom: 10px;
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    background-color: #131313;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.816);
+
 }
 
 .img_bg{
     margin: 0px;
-    height: 100%;
+    width: 85%;
     filter: grayscale(0.2);
     mix-blend-mode: hard-light;
 
@@ -184,3 +202,110 @@ box-shadow: 0px 5px 20px 5px rgba(0, 0, 0, 0.816);
     
 }
 
+.parts li{
+    cursor: pointer;
+
+}
+
+.parts li:hover {
+    text-decoration: underline;
+    transform : scale(1.01)
+}
+
+
+
+.intro-pre{
+    color: transparent;
+    background: linear-gradient(45deg, rgb(255, 0, 0), white, rgb(255, 136, 0));
+    -webkit-background-clip: text;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    width:auto; 
+    font-family: Rubik Doodle Shadow;
+}
+
+.intro-pre-child{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 50%;
+}
+
+.icons-decoration{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.animated-deco{
+    height: 80%;
+    filter: invert(1) ;
+    align-self: flex-end;
+
+}
+
+.animated-deco:hover{
+    animation: colored 1s infinite;
+}
+
+@keyframes colored {
+    from{
+        filter: invert(1) hue-rotate(0deg);
+    }
+    to{
+        filter: invert(1) hue-rotate(360deg);
+    }
+}
+
+.reverse{
+    align-self: flex-start;
+    transform: rotate(180deg)
+}
+
+.color_1{
+    filter: invert(1) hue-rotate(95deg);
+}
+.color_2{
+    filter: invert(1) hue-rotate(290deg);
+}
+
+
+.group{
+    height: 50%;
+    display: flex;
+}
+
+.random-place{
+    position: absolute;
+    height: 5%;
+    margin: 8%;
+    margin-top: 15%;
+
+}
+
+.girlandes{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    filter: invert(1) hue-rotate(45deg);
+    margin-top: 45%;
+    display: grid;
+    grid-template: 1fr / repeat(3, 1fr);
+    overflow: hidden;
+}
+
+.girlandes >img{
+    position: relative;
+    width: 100%;
+
+}
+
+.girlandes >img:hover{
+    animation: colored 2s infinite;
+}
